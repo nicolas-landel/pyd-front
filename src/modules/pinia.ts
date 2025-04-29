@@ -1,10 +1,12 @@
 import type { UserModule } from '~/types'
 import { createPinia } from 'pinia'
+import { createORM } from 'pinia-orm'
+
 
 // Setup Pinia
 // https://pinia.vuejs.org/
 export const install: UserModule = ({ isClient, initialState, app }) => {
-  const pinia = createPinia()
+  const pinia = createPinia().use(createORM())
   app.use(pinia)
   // Refer to
   // https://github.com/antfu/vite-ssg/blob/main/README.md#state-serialization

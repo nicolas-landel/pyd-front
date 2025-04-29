@@ -17,11 +17,15 @@
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
+    "@quasar/vite-plugin": "^1.9.0",
     "@unhead/vue": "catalog:frontend",
     "@unocss/reset": "catalog:frontend",
     "@vueuse/core": "catalog:frontend",
+    "axios": "^1.9.0",
     "nprogress": "catalog:frontend",
     "pinia": "catalog:frontend",
+    "pinia-orm": "^1.10.2",
+    "quasar": "^2.18.1",
     "vue": "catalog:frontend",
     "vue-i18n": "catalog:frontend",
     "vue-router": "catalog:frontend"

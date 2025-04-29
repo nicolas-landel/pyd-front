@@ -157,6 +157,9 @@ importers:
 
   .:
     dependencies:
+      '@quasar/vite-plugin':
+        specifier: ^1.9.0
+        version: 1.9.0(@vitejs/plugin-vue@5.2.3(vite@6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2)))(quasar@2.18.1)(vite@6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       '@unhead/vue':
         specifier: catalog:frontend
         version: 2.0.2(vue@3.5.13(typescript@5.8.2))
@@ -166,12 +169,21 @@ importers:
       '@vueuse/core':
         specifier: catalog:frontend
         version: 13.0.0(vue@3.5.13(typescript@5.8.2))
+      axios:
+        specifier: ^1.9.0
+        version: 1.9.0
       nprogress:
         specifier: catalog:frontend
         version: 0.2.0
       pinia:
         specifier: catalog:frontend
         version: 3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+      pinia-orm:
+        specifier: ^1.10.2
+        version: 1.10.2(pinia@3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))
+      quasar:
+        specifier: ^2.18.1
+        version: 2.18.1
       vue:
         specifier: catalog:frontend
         version: 3.5.13(typescript@5.8.2)
@@ -1584,6 +1596,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@pinia-orm/normalizr@1.10.2':
+    resolution: {integrity: sha512-lgcCb7ST/leYXJwUT/y7RvTn+5U6OOmvSUuNGs/Mpqrx99IG3R9DSWA3w7n/wl7yDt5+35J0ERK3bebQW1STsQ==}
+
   '@pkgr/core@0.1.0':
     resolution: {integrity: sha512-Zwq5OCzuwJC2jwqmpEQt7Ds1DTi6BWSwoGkbb1n9pO3hzb35BoJELx7c0T23iDkBGkh2e7tvOtjF3tr3OaQHDQ==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -1594,6 +1609,15 @@ packages:
   '@quansync/fs@0.1.1':
     resolution: {integrity: sha512-sx8J1O/+j2lqs8MvsEz6rs/6UAUpCb4fu7C6EqtMqzbS3CmqLkTDTOMK+DrWukvyUuHzl8DhMjfNJzQDTqfGJg==}
     engines: {node: '>=20.18.0'}
+
+  '@quasar/vite-plugin@1.9.0':
+    resolution: {integrity: sha512-r1MFtI2QZJ2g20pe75Zuv4aoi0uoK8oP0yEdzLWRoOLCbhtf2+StJpUza9TydYi3KcvCl9+4HUf3OAWVKoxDmQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@vitejs/plugin-vue': ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
+      quasar: ^2.16.0
+      vite: ^6.2.3
+      vue: ^3.0.0
 
   '@rollup/plugin-babel@5.3.1':
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
@@ -2587,6 +2611,9 @@ packages:
   aws4@1.12.0:
     resolution: {integrity: sha512-NmWvPnx0F1SfrQbYwOi7OeaNGokp9XhzNioJ/CSBs8Qa4vxug81mhJEAVZwxXuBmYB5KDRfMq/F3RR0BIU7sWg==}
 
+  axios@1.9.0:
+    resolution: {integrity: sha512-re4CqKTJaURpzbLHtIi6XpDv20/CnpXOtjRY5/CU32L8gU8ek9UIivcfvSWvmKEngmVbrUtPpdDwWDWL7DNHvg==}
+
   babel-plugin-polyfill-corejs2@0.3.3:
     resolution: {integrity: sha512-8hOdmFYFSZhqg2C/JgLUQ+t52o5nirNwaWM2B9LWteozwIvM14VSwdsCAUET10qT+kmySAlseadmfeeSWFCy+Q==}
     peerDependencies:
@@ -3533,6 +3560,15 @@ packages:
 
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
+
+  follow-redirects@1.15.9:
+    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
 
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -4751,6 +4787,11 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
+  pinia-orm@1.10.2:
+    resolution: {integrity: sha512-Q8QwFFdAmhc347QY6ndXtLZX4kE+46dUQbyy0ha6URmdIaz1jf8FbZEJ8BhHMLGPx+PeO/QJraxvvETx62lMQA==}
+    peerDependencies:
+      pinia: ^2.1.7
+
   pinia@3.0.1:
     resolution: {integrity: sha512-WXglsDzztOTH6IfcJ99ltYZin2mY8XZCXujkYWVIJlBjqsP6ST7zw+Aarh63E1cDVYeyUcPCxPHzJpEOmzB6Wg==}
     peerDependencies:
@@ -4832,6 +4873,9 @@ packages:
   proxy-from-env@1.0.0:
     resolution: {integrity: sha512-F2JHgJQ1iqwnHDcQjVBsq3n/uoaFL+iPW/eAeL7kVxy/2RrWaN4WroKjjvbsoRtv0ftelNyC01bjRhn/bhcf4A==}
 
+  proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
   pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
 
@@ -4853,6 +4897,10 @@ packages:
 
   quansync@0.2.10:
     resolution: {integrity: sha512-t41VRkMYbkHyCYmOvx/6URnN80H7k4X0lLdBMGsz+maAwrJQYB1djpV6vHrQIBE0WBSGqhtEHrK9U3DWWH8v7A==}
+
+  quasar@2.18.1:
+    resolution: {integrity: sha512-db/P64Mzpt1uXJ0MapaG+IYJQ9hHDb5KtTCoszwC78DR7sA+Uoj7nBW2EytwYykIExEmqavOvKrdasTvqhkgEg==}
+    engines: {node: '>= 10.18.1', npm: '>= 6.13.4', yarn: '>= 1.21.1'}
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -5870,6 +5918,17 @@ packages:
 
   vue-component-type-helpers@2.0.7:
     resolution: {integrity: sha512-7e12Evdll7JcTIocojgnCgwocX4WzIYStGClBQ+QuWPinZo/vQolv2EMq4a3lg16TKfwWafLimG77bxb56UauA==}
+
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
 
   vue-eslint-parser@10.1.1:
     resolution: {integrity: sha512-bh2Z/Au5slro9QJ3neFYLanZtb1jH+W2bKqGHXAoYD4vZgNG3KeotL7JpPv5xzY4UXUXJl7TrIsnzECH63kd3Q==}
@@ -7430,6 +7489,8 @@ snapshots:
   '@oxc-resolver/binding-win32-x64-msvc@4.2.0':
     optional: true
 
+  '@pinia-orm/normalizr@1.10.2': {}
+
   '@pkgr/core@0.1.0': {}
 
   '@polka/url@1.0.0-next.24': {}
@@ -7437,6 +7498,13 @@ snapshots:
   '@quansync/fs@0.1.1':
     dependencies:
       quansync: 0.2.10
+
+  '@quasar/vite-plugin@1.9.0(@vitejs/plugin-vue@5.2.3(vite@6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2)))(quasar@2.18.1)(vite@6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))':
+    dependencies:
+      '@vitejs/plugin-vue': 5.2.3(vite@6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
+      quasar: 2.18.1
+      vite: 6.2.3(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0)
+      vue: 3.5.13(typescript@5.8.2)
 
   '@rollup/plugin-babel@5.3.1(@babel/core@7.25.2)(rollup@2.79.1)':
     dependencies:
@@ -8649,6 +8717,14 @@ snapshots:
 
   aws4@1.12.0: {}
 
+  axios@1.9.0:
+    dependencies:
+      follow-redirects: 1.15.9
+      form-data: 4.0.2
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
   babel-plugin-polyfill-corejs2@0.3.3(@babel/core@7.25.2):
     dependencies:
       '@babel/compat-data': 7.25.2
@@ -9859,6 +9935,8 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.1: {}
+
+  follow-redirects@1.15.9: {}
 
   for-each@0.3.3:
     dependencies:
@@ -11229,6 +11307,15 @@ snapshots:
 
   pify@2.3.0: {}
 
+  pinia-orm@1.10.2(pinia@3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      '@pinia-orm/normalizr': 1.10.2
+      pinia: 3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+      vue-demi: 0.14.10(vue@3.5.13(typescript@5.8.2))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+
   pinia@3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)):
     dependencies:
       '@vue/devtools-api': 7.7.2
@@ -11302,6 +11389,8 @@ snapshots:
 
   proxy-from-env@1.0.0: {}
 
+  proxy-from-env@1.1.0: {}
+
   pump@3.0.0:
     dependencies:
       end-of-stream: 1.4.4
@@ -11320,6 +11409,8 @@ snapshots:
       side-channel: 1.1.0
 
   quansync@0.2.10: {}
+
+  quasar@2.18.1: {}
 
   queue-microtask@1.2.3: {}
 
@@ -12561,6 +12652,10 @@ snapshots:
   vscode-uri@3.0.8: {}
 
   vue-component-type-helpers@2.0.7: {}
+
+  vue-demi@0.14.10(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      vue: 3.5.13(typescript@5.8.2)
 
   vue-eslint-parser@10.1.1(eslint@9.23.0(jiti@2.4.2)):
     dependencies:
