@@ -1,5 +1,6 @@
 import path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import { quasar } from '@quasar/vite-plugin'
 import Shiki from '@shikijs/markdown-it'
 import { unheadVueComposablesImports } from '@unhead/vue'
 import Vue from '@vitejs/plugin-vue'
@@ -140,6 +141,10 @@ export default defineConfig({
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools(),
+
+    quasar({
+      sassVariables: 'src/quasar-variables.sass',
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest
