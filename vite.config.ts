@@ -81,26 +81,26 @@ export default defineConfig({
 
     // https://github.com/unplugin/unplugin-vue-markdown
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
-    Markdown({
-      wrapperClasses: 'prose prose-sm m-auto text-left',
-      headEnabled: true,
-      async markdownItSetup(md) {
-        md.use(LinkAttributes, {
-          matcher: (link: string) => /^https?:\/\//.test(link),
-          attrs: {
-            target: '_blank',
-            rel: 'noopener',
-          },
-        })
-        md.use(await Shiki({
-          defaultColor: false,
-          themes: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
-          },
-        }))
-      },
-    }),
+    // Markdown({
+    //   wrapperClasses: 'prose prose-sm m-auto text-left',
+    //   headEnabled: true,
+    //   async markdownItSetup(md) {
+    //     md.use(LinkAttributes, {
+    //       matcher: (link: string) => /^https?:\/\//.test(link),
+    //       attrs: {
+    //         target: '_blank',
+    //         rel: 'noopener',
+    //       },
+    //     })
+    //     md.use(await Shiki({
+    //       defaultColor: false,
+    //       themes: {
+    //         light: 'vitesse-light',
+    //         dark: 'vitesse-dark',
+    //       },
+    //     }))
+    //   },
+    // }),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
@@ -143,7 +143,7 @@ export default defineConfig({
     VueDevTools(),
 
     quasar({
-      sassVariables: 'src/quasar-variables.sass',
+      sassVariables: '~/quasar-variables.sass',
     }),
   ],
 

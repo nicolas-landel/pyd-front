@@ -5,6 +5,8 @@ import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto-routes'
 import App from './App.vue'
 
+// import 'quasar/src/css/index.sass'
+// import '@quasar/extras/material-icons/material-icons.css' // Or any other icon set you are using
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
