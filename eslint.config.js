@@ -8,6 +8,9 @@ export default antfu(
     pnpm: true,
     rules: {
       'pnpm/json-enforce-catalog': 'off',
+      'vue/component-tags-order': ['error', {
+        order: ['template', 'script', 'style'],
+      }],
     },
   },
 )
