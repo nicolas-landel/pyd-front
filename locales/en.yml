@@ -7,17 +7,33 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+error: Error
+errorOccurred: An error occured, please try again
 intro:
   aka: Also known as
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
   whats-your-name: What's your name?
+login:
+  button: Log in
+  email: Email
+  forgotPassword: Forgot password
+  or: OR
+  password: Password
+  signup: Create an account
+  title: Login
 not-found: Not found
 password: Password
 signup:
+  button: Sign up
   confirmPassword: Confirm Password
   emailPlaceholder: Enter your email
+  error: Error to sign up
   firstName: First Name
+  formInvalid: The form is not valid
   lastName: Last Name
+  passwordMismatch: Signup password mismatch
+  success: Account created!
+  successVerifyEmail: An email has been sent to you to activate your account
   title: Sign up

@@ -7,17 +7,33 @@ button:
   home: Accueil
   toggle_dark: Basculer en mode sombre
   toggle_langs: Changer de langue
+error: Erreur
+errorOccurred: Une erreur est survenue
 intro:
   aka: Aussi connu sous le nom de
   desc: Exemple d'application Vite
   dynamic-route: Démo de route dynamique
   hi: Salut, {name}!
   whats-your-name: Comment t'appelles-tu ?
+login:
+  button: Se connecter
+  email: Email
+  forgotPassword: Mot de passe oublié
+  or: OU
+  password: Mot de passe
+  signup: Créer un compte
+  title: Connexion
 not-found: Page non trouvée
 password: Mot de passe
 signup:
+  button: S'incrire
   confirmPassword: Confirmer le mot de passe
   emailPlaceholder: Entrer votre email
+  error: Erreur lors de l'inscription
   firstName: Prénom
+  formInvalid: Formulaire invalide
   lastName: Nom
-  title: S'inscrire
+  passwordMismatch: Les mots de passe sont différents
+  success: Compte créé !
+  successVerifyEmail: Un email vous a été envoyé pour activer votre compte
+  title: Inscription
