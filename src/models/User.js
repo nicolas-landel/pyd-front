@@ -10,8 +10,12 @@ export default class User extends Model {
       firstName: this.string(""),
       lastName: this.string(""),
       email: this.string(""),
-      password: this.string(""),
-      phone: this.string(""),
+      createdAt: this.string(""),
+      isActive: this.boolean(false),
+      isStaff: this.boolean(false),
+      isSuperuser: this.boolean(false),
+      isCurrent: this.boolean(false),
+      token: this.string(""),
     };
   }
 }

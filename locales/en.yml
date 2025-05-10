@@ -16,8 +16,10 @@ intro:
   hi: Hi, {name}!
   whats-your-name: What's your name?
 login:
+  alreadyAccount: Already an account?
   button: Log in
   email: Email
+  error: Error during login
   forgotPassword: Forgot password
   or: OR
   password: Password

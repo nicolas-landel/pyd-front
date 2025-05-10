@@ -1,7 +1,13 @@
 <template>
   <q-page padding>
-    <TheSignupForm />
-    <TheLoginForm />
+    <div v-if="!getCurrentUser">
+    
+    <TheLoginForm v-if="showLoginForm" @login="saveUser" @go-to-signup="goToSignup" />
+    <TheSignupForm v-else @go-to-login="goToLogin"/>
+  </div>
+  <div v-else>
+    Welcome {{ getCurrentUser }}!
+    </div>
   </q-page>
 </template>
 
@@ -11,11 +17,34 @@
 import { useRepo } from 'pinia-orm';
 import User from '~/models/User';
 import { useUserStore } from '~/stores/user';
+import { useRouter } from 'vue-router';
 
-const userStore = useUserStore();
+const { getCurrentUser, setCurrentUser } = useUserStore();
+const router = useRouter();
+
+const showLoginForm = ref(true);
+
+const goToSignup = () => {
+  showLoginForm.value = false;
+};
+
+const goToLogin = () => {
+  showLoginForm.value = true;
+};
+
+const saveUser = ({ user }: { user: User }) => {
+  console.log('userLogged', user);
+  setCurrentUser(user)
+  console.log("GETTTT", getCurrentUser);
+  router.push('/dashboard');
+};
+
 
 onBeforeMount(() => {
-  userStore
+  console.log('BEFORE MOIOOOUNT', getCurrentUser);
+  if (getCurrentUser) {
+    router.push('/dashboard');
+  }
 });
 
 

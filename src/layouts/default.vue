@@ -9,10 +9,11 @@
           </q-avatar>
           {{ t('app.title') }}
           <q-space />
-          <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
+          
+        </q-toolbar-title>
+        <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
       <div i-carbon-language />
     </a>
-        </q-toolbar-title>
       </q-toolbar>
     </q-header>
     

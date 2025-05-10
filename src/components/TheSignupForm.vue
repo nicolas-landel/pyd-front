@@ -19,6 +19,19 @@
         </div>
 
       </q-form>
+      <div class="row items-center mt-3">
+        <div class="col">
+          <q-separator />
+        </div>
+        <div class="col-12 col-md-auto mx-3">
+          <p>{{ t("login.alreadyAccount") }}</p>
+        </div>
+
+        <div class="col">
+          <q-separator />
+        </div>
+      </div>
+      <q-btn outline :label="t('login.signup')" color="secondary" class="full-width mt-3" @click="goToLogin" />
     </q-card-section>
   </q-card>
 </template>
@@ -34,10 +47,10 @@ import { flattenResponseData } from "~/utils/utils.js";
 const { t } = useI18n();
 const $q = useQuasar()
 
+const emit = defineEmits(['go-to-login'])
 
 
 const signupForm = ref<QForm | null>(null);
-const showPasswordError = ref(false);
 const form = ref({
   email: "",
   firstName: "",
@@ -47,9 +60,9 @@ const form = ref({
 });
 
 
-const equalPasswordRule = (val: string) => {
-  return val === form.value.password1 || t('signup.passwordMismatch');
-};
+const goToLogin = () => {
+  emit('go-to-login')
+}
 
 const isValidPassword = () => {
   return form.value.password1 === form.value.password2

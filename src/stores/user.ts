@@ -1,31 +1,27 @@
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { defineStore } from 'pinia'
+import { User } from '~/models';
 
 export const useUserStore = defineStore('user', () => {
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+    const currentUser = ref<User | null>(null);
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+    const getCurrentUser = computed(() => currentUser.value);
 
-  /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
-   *
-   * @param name - new name to set
-   */
-  function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
+    function setCurrentUser(user: any) {
+      console.log('setCurrentUser', user);
+      currentUser.value = user;
+      console.log("?????", getCurrentUser.value);
+    }
 
-    savedName.value = name
+    return {
+      currentUser,
+      getCurrentUser,
+      setCurrentUser,
+    };
+  },
+  {
+    persist: true
   }
+);
 
-  return {
-    setNewName,
-    otherNames,
-    savedName,
-  }
-})
 
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
+
