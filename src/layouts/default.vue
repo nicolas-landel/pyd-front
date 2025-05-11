@@ -9,14 +9,17 @@
           </q-avatar>
           {{ t('app.title') }}
           <q-space />
-          
+
         </q-toolbar-title>
-        <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
-      <div i-carbon-language />
-    </a>
+        <a icon-btn :title="t('button.toggle_langs')" class="px-2" @click="toggleLocales()">
+          <div size="8" i-carbon-language />
+        </a>
+        <a icon-btn :title="t('button.logout')" class="px-2" @click="userLogout()">
+          <div size="8" i-carbon-logout />
+        </a>
       </q-toolbar>
     </q-header>
-    
+
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -24,11 +27,15 @@
   </q-layout>
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts">
 
 import { useI18n } from 'vue-i18n';
+import { useUserStore } from '~/stores/user';
+import { useRouter } from 'vue-router';
 
 const { t, locale } = useI18n();
+const { logout } = useUserStore();
+const router = useRouter();
 
 import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
@@ -40,4 +47,12 @@ async function toggleLocales() {
   await loadLanguageAsync(newLocale)
   locale.value = newLocale
 }
+
+const userLogout = () => {
+  logout()
+  console.log('logout')
+  router.push('/home')
+}
+
+
 </script>

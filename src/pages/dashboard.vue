@@ -1,5 +1,8 @@
 <template>
-  Hello {{ getCurrentUser }}
+  <q-page padding>
+    Hello {{ getCurrentUser }}
+
+  </q-page>
 
 
 
@@ -7,6 +10,7 @@
 
 
 <script setup lang="ts">
+
 
 import { useI18n } from 'vue-i18n';
 import { useQuasar } from 'quasar';
@@ -19,4 +23,17 @@ const { t } = useI18n();
 const $q = useQuasar();
 const { getCurrentUser } = useUserStore();
 
+
+
 </script>
+
+<route lang="json">
+  {
+    "meta": {
+      "requiresAuth": true,
+      "middleware": [
+        "auth"
+      ]
+    }
+  }
+</route>

@@ -5,6 +5,7 @@ button:
   back: Back
   go: GO
   home: Home
+  logout: Logout
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 error: Error

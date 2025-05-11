@@ -73,7 +73,6 @@ const login = async () => {
       password: password.value,
       username: username.value,
     })
-    console.log('Login successful:', response)
     const user = await getUserData(response.data.key)
     localStorage.setItem('token', response.data.key)
     emit('login', { user })

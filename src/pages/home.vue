@@ -14,7 +14,6 @@
 <script setup lang="ts">
 // import TheLoginForm from '~/components/TheLoginForm.vue';
 
-import { useRepo } from 'pinia-orm';
 import User from '~/models/User';
 import { useUserStore } from '~/stores/user';
 import { useRouter } from 'vue-router';
